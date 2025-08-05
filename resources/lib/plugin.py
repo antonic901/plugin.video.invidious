@@ -1,6 +1,7 @@
 import sys
-import urlparse
 import xbmc
+
+from urllib.parse import parse_qsl
 
 import resources.lib.router as router
 
@@ -49,7 +50,7 @@ class Dictionary(dict):
 
 def run():
     # parse URL params
-    url_params = Dictionary(urlparse.parse_qsl(sys.argv[2][1:]))
+    url_params = Dictionary(parse_qsl(sys.argv[2][1:]))
 
     route = "index"
     if url_params:

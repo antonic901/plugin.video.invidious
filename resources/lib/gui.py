@@ -1,10 +1,11 @@
 import os
 import sys
-import urllib
 import xbmc
 import xbmcgui
 import xbmcaddon
 import xbmcplugin
+
+from urllib.parse import urlencode
 
 ADDON_HANDLE = int(sys.argv[1])
 ADDON_VFS_PATH = sys.argv[0]
@@ -35,7 +36,7 @@ def add_item(
     item.setArt(art)
 
     if not url:
-        url = "{}?{}".format(ADDON_VFS_PATH, urllib.urlencode(url_params))
+        url = "{}?{}".format(ADDON_VFS_PATH, urlencode(url_params))
 
     if video_infotag is not None:
         is_folder = False

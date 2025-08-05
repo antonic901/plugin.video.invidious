@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
 import xbmc
-import gui
-
 from datetime import datetime
 
-from .invidious import InvidiousAPI
-from .storage import load_storage, sync_storage
+from resources.lib import gui
+from resources.lib.storage import load_storage, sync_storage
+from resources.lib.invidious import InvidiousAPI
 
 invidious = InvidiousAPI(gui.addon)
 
